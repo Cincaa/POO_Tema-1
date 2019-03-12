@@ -12,7 +12,6 @@ public:
     Multimi();
     Multimi(int v);
     void transformare();
-    void show();
     vector <int> get_V()
     {
         return V;
@@ -63,12 +62,6 @@ void Multimi::transformare()
             }
 }
 
-void Multimi::show()
-{
-    for(int i=0;i<this->V.size();i++)
-        cout<<this->V[i]<<' ';
-    cout<<'\n';
-}
 
 Multimi Multimi:: operator +(Multimi B)
 {
@@ -160,7 +153,6 @@ class MultPereche
     vector <Pereche> V;
 public:
     MultPereche produs(Multimi x, Multimi y);
-    void show();
     friend ostream& operator << (ostream &output, const MultPereche &obj);
     friend istream& operator >> (istream &input, MultPereche &obj);
 };
@@ -196,14 +188,6 @@ MultPereche MultPereche:: produs(Multimi x, Multimi y)
         }
 
     return C;
-}
-
-void MultPereche:: show()
-{
-    cout<<"\n{";
-    for(int i=0;i<V.size();i++)
-        cout<<'('<<V[i].a<<','<<V[i].b<<"), ";
-    cout<<"\b\b}\n";
 }
 int main()
 {
